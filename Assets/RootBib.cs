@@ -37,7 +37,7 @@ public class RootBib : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "scoreup")
+        if (collision.gameObject.name == "scoreup" && isBibAlive)
         {
             ScoreUp();
         }
