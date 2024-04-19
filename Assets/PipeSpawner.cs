@@ -6,7 +6,8 @@ using UnityEngine;
 public class PipeSpawner : MonoBehaviour
 {
     [SerializeField]private GameObject pipe;
-    private float timer = 1;
+    private float timer = 2.5f;
+    public RootBib bib;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class PipeSpawner : MonoBehaviour
     }
 
     void SpawnPipe() {
-        if (pipe != null) {
+        if (pipe != null && bib.IsAlive()) {
             float low = -3.5f;
             float high = 3.5f;
 

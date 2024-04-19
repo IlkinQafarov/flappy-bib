@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class RootBib : MonoBehaviour
 {
     public Rigidbody2D bibBody;
-    public byte flyStrength;
+    public float flyStrength;
     private bool isBibAlive = true;
     [SerializeField] private GameObject gameover;
 
@@ -31,7 +31,12 @@ public class RootBib : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape)  == true)
         {
-            Application.Quit();
+            GoMainMenu();
+        }
+
+        if (transform.position.y > 5 || transform.position.y < -5)
+        {
+            GameOver();
         }
     }
 
@@ -42,6 +47,11 @@ public class RootBib : MonoBehaviour
             ScoreUp();
         }
 
+    }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -68,7 +78,7 @@ public class RootBib : MonoBehaviour
     {
         isBibAlive = false;
     }
-
+    public bool IsAlive() { return isBibAlive; }
     [ContextMenu("restart")]public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
