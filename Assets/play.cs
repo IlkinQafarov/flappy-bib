@@ -6,6 +6,10 @@ using TMPro;
 
 public class Play : MonoBehaviour
 {
+    [ContextMenu("Res SIze")] public void ResSize()
+    {
+        Debug.Log(Screen.currentResolution);
+    }
     [SerializeField] private GameObject canvaMain;
     [SerializeField] private GameObject canvaCredits;
     [SerializeField] private TextMeshProUGUI creditText;

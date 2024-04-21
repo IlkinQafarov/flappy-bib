@@ -11,6 +11,7 @@ public class RootBib : MonoBehaviour
     public float flyStrength;
     private bool isBibAlive = true;
     [SerializeField] private GameObject gameover;
+    [SerializeField] private Sprite bibDead;
 
     public delegate void OnPassedPipeEnter(int Score);
     public event OnPassedPipeEnter OnPassedPipe;
@@ -70,6 +71,7 @@ public class RootBib : MonoBehaviour
     }
     private void GameOver()
     {
+        gameObject.GetComponent<SpriteRenderer>().sprite = bibDead;
         gameover.SetActive(true);
         NotAlive();
     }

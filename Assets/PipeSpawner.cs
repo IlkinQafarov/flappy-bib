@@ -6,7 +6,7 @@ using UnityEngine;
 public class PipeSpawner : MonoBehaviour
 {
     [SerializeField]private GameObject pipe;
-    private float timer = 2.5f;
+    private float timer = 3f;
     public RootBib bib;
 
     // Start is called before the first frame update
